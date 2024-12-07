@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 
@@ -14,12 +14,17 @@ const StarshipSearch = ({updateTheList}) => {
     event.preventDefault()
     console.log(inputValue)
     updateTheList(inputValue)
+    setInputValue('')
   }
-  
+
   const handleChange = (event) => {
     const wordSearch = event.target.value
     setInputValue(wordSearch)
   }
+
+  useEffect(() => {
+    
+  }, [inputValue])
 
   return (
     <div >
@@ -29,7 +34,13 @@ const StarshipSearch = ({updateTheList}) => {
 
              <label htmlFor="search">Search Term:</label>
 
-             <input type="text" name="search" id="search" onChange={handleChange} />
+             <input
+              type="text"
+              name="search"
+              id="search"
+              value={inputValue}
+              onChange={handleChange}
+             />
 
              <button type="submit">Search</button>
         </form>

@@ -19,8 +19,8 @@ const StarshipList = ({starWarsShips}) => {
       }}
       >
         <Lottie
-         width={200} 
-         height={200} 
+         width={100} 
+         height={100} 
          options={{loop: true, autoplay: true, animationData}}
          />
       </div>
@@ -32,11 +32,10 @@ const StarshipList = ({starWarsShips}) => {
 
         <p>Number of results: {starWarsShips.length}</p>
         <ul>
-          
           {
             starWarsShips.map( (ship, index) => (
-              <li>
-                <StarshipCard ship={ship} key={index}/>
+              <li key={index}>
+                <StarshipCard ship={ship} />
               </li>
             ))
           }

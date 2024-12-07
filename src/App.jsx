@@ -35,7 +35,9 @@ const App = () => {
 
     //comes from starship search component JOB get event.target.value fomr input text
     const updateTheList = (inputValue) => {
-      
+
+
+      console.log('triggered')
       if(!inputValue) {
         //ships in the api
         fetchStarWarsShips()
@@ -48,6 +50,11 @@ const App = () => {
         }))
   
         setStarWarsShips(filteredSearch)
+
+        if(filteredSearch.length === 0) {
+          alert('no result found')
+          fetchStarWarsShips()
+        }
 
         console.log(filteredSearch)
       }
