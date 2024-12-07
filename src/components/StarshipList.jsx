@@ -1,12 +1,28 @@
 import React from 'react'
 import StarshipCard from './StarshipCard'
 
+import Lottie from 'react-lottie'
+import animationData from '../../Animation - 1733529455152.json'
+
+
 const StarshipList = ({starWarsShips}) => {
 
   if(starWarsShips.length === 0) {
     return (
-      <div>
-        Loading...
+      <div 
+       style={{
+        width: '100vw',
+        height: '50vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+      >
+        <Lottie
+         width={200} 
+         height={200} 
+         options={{loop: true, autoplay: true, animationData}}
+         />
       </div>
     )
   } else {
